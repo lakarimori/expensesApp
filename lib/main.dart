@@ -42,52 +42,53 @@ class MyHomePage extends StatelessWidget {
             children: transactions
                 .map(
                   (transaction) => Card(
-                      child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.purple,
-                            width: 2,
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.purple,
+                              width: 2,
+                            ),
                           ),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
-                        ),
-                        child: Text(
-                          '\$${transaction.cost}',
-                          style: TextStyle(
-                            color: Colors.purple,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                          padding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 15,
                           ),
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            transaction.title,
+                          child: Text(
+                            '\$${transaction.cost}',
                             style: TextStyle(
-                              color: Colors.green,
-                              fontSize: 17,
+                              color: Colors.purple,
                               fontWeight: FontWeight.bold,
+                              fontSize: 20,
                             ),
                           ),
-                          Text(
-                            DateFormat('yyyy/MM/dd - HH:mm')
-                                .format(transaction.date),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              transaction.title,
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )),
+                            Text(
+                              DateFormat('yyyy/MM/dd - HH:mm')
+                                  .format(transaction.date),
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 )
                 .toList(),
           ),
