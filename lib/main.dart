@@ -38,6 +38,29 @@ class MyHomePage extends StatelessWidget {
             ),
             elevation: 10,
           ),
+          Card(
+            child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'title'),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'amount'),
+                  ),
+                  FlatButton(
+                    onPressed: () => {},
+                    child: Text('data'),
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                  )
+                ],
+              ),
+              padding: EdgeInsets.all(10),
+            ),
+            elevation: 10,
+          ),
           Column(
             children: transactions
                 .map(
